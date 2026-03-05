@@ -1,10 +1,10 @@
 import pytest
 import json
-
+import os
 url = "https://reqres.in/api/users"
 
 
-with open("test_data.json") as f:
+with open(os.path.join(os.path.dirname(__file__), "test_data.json")) as f:
     data = json.load(f)
 
 users = [(u["id"], u["email"]) for u in data["users"]]
