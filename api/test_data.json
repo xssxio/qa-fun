@@ -1,0 +1,6 @@
+{
+    "users": [
+        {"id": 1, "email": "george.bluth@reqres.in"},
+        {"id": 2, "email": "janet.weaver@reqres.in"}
+    ]
+}
