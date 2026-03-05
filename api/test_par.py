@@ -26,6 +26,15 @@ def test_json(api_fixture, user_id, email):
 
 
 @pytest.mark.smoke
+def test_login(api_fixture):
+    response = api_fixture.post("https://reqres.in/api/register", json={"email": "eve.holt@reqres.in", "password": "pistol"})
+    data = response.json()
+    assert response.status_code == 200
+    assert data["token"]
+    assert data["id"]
+    print(data)
+
+@pytest.mark.smoke
 def test_user_created(api_fixture):
     response = api_fixture.get(f"{url}/1")
     assert response.status_code == 200
